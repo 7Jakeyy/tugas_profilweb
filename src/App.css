@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.8s ease, color 0.8s ease, border-color 0.8s ease;
+}
+
+/* TEMA FUTURISTIK ELEGAN */
+.light-mode {
+  background: radial-gradient(circle at 50% 120%, rgba(211, 84, 0, 0.15) 0%, #F8F9FA 60%);
+  color: #111;
+}
+
+.dark-mode {
+  background: radial-gradient(circle at 50% 120%, rgba(230, 126, 34, 0.25) 0%, #050505 60%);
+  color: #fff;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%; /* Tambahkan baris ini */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Grid Latar Belakang (Aksen Futuristik) */
+.grid-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(211, 84, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(211, 84, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.dark-mode .grid-bg {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  z-index: 10;
+  position: relative;
+  border-bottom: 1px solid rgba(211, 84, 0, 0.1);
+}
+
+.dark-mode .navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  background: linear-gradient(90deg, currentColor, #D35400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.nav-links span {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* Efek garis bawah cyber */
+.nav-links span::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D35400;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-links span:hover {
+  letter-spacing: 4px; /* Huruf sedikit meregang */
+  color: #D35400;
+}
+
+.dark-mode .nav-links span:hover {
+  color: #E67E22;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+  height: 2px;
+  border-radius: 0;
+  opacity: 1;
+  box-shadow: 0 0 10px #D35400; /* Glow effect */
+}
+
+/* Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: transform 0.5s ease;
+  color: inherit;
+  opacity: 0.7;
+}
+.theme-toggle:hover {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.hire-btn {
+  padding: 10px 30px;
+  border-radius: 4px; /* Sudut tajam futuristik */
+  border: 1px solid #D35400;
+  background: transparent;
+  color: #D35400;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 11px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hire-btn:hover {
+  background: #D35400;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(211, 84, 0, 0.4);
+}
+
+.dark-mode .hire-btn {
+  border-color: #E67E22;
+  color: #E67E22;
+}
+
+.dark-mode .hire-btn:hover {
+  background: #E67E22;
+  color: #000;
+  box-shadow: 0 0 20px rgba(230, 126, 34, 0.4);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  perspective: 1500px; 
+}
+
+/* Teks Raksasa Belakang (Hollow / Kawat) */
+.bg-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15vw;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: transparent;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.light-mode .bg-text {
+  -webkit-text-stroke: 1px rgba(211, 84, 0, 0.2);
+}
+
+.dark-mode .bg-text {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Lingkaran Cahaya di belakang foto */
+.glow-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(211, 84, 0, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Foto Profil */
+.profile-img {
+  position: relative;
+  z-index: 2;
+  height: 80vh;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)) contrast(1.1); 
+}
+
+/* Card Morph (HUD Panel Futuristik) */
+.content-card {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.05); /* Hampir transparan */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(211, 84, 0, 0.3);
+  border-radius: 12px;
+  padding: 50px;
+  max-width: 600px;
+  margin: 0 auto 100px auto;
+  text-align: left; /* Rata kiri lebih futuristik */
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.2),
+    inset 0 0 20px rgba(211, 84, 0, 0.05); 
+  line-height: 1.8;
+  color: #111; 
+}
+
+.dark-mode .content-card {
+  background: rgba(0, 0, 0, 0.4); 
+  border: 1px solid rgba(230, 126, 34, 0.3);
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.8),
+    inset 0 0 20px rgba(230, 126, 34, 0.05);
+  color: #e0e0e0;
+}
+
+/* Sudut siku-siku cyber di card */
+.content-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 20px; height: 20px;
+  border-top: 2px solid #D35400;
+  border-left: 2px solid #D35400;
+}
+.content-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 20px; height: 20px;
+  border-bottom: 2px solid #D35400;
+  border-right: 2px solid #D35400;
+}
+
+.content-card h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #D35400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-mode .content-card h2 {
+  color: #E67E22;
+}
+
+.close-btn {
+  margin-top: 40px;
+  padding: 10px 30px;
+  background: transparent; 
+  color: #D35400;
+  border: 1px solid #D35400;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .close-btn {
+  color: #E67E22;
+  border-color: #E67E22;
+}
+
+.close-btn:hover {
+  background: #D35400;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(211, 84, 0, 0.5);
+}
+
+.dark-mode .close-btn:hover {
+  background: #E67E22;
+  color: #000;
+}
+
+.sosmed-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid rgba(211, 84, 0, 0.1);
+  background: rgba(211, 84, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .sosmed-link {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sosmed-link:hover {
+  border-color: #D35400;
+  transform: translateX(10px); /* Bergerak ke kanan ala menu game sci-fi */
+  box-shadow: inset 5px 0 0 #D35400;
+}
+.dark-mode .sosmed-link:hover {
+  border-color: #E67E22;
+  box-shadow: inset 5px 0 0 #E67E22;
+}
+
+/* Efek Hover untuk Link Riwayat Pendidikan */
+.school-link {
+  transition: all 0.3s ease;
+}
+
+.school-link:hover {
+  color: #D35400 !important;
+  transform: translateX(5px);
+  text-shadow: 0 0 10px rgba(211, 84, 0, 0.4);
+}
+
+.dark-mode .school-link:hover {
+  color: #E67E22 !important;
+  text-shadow: 0 0 10px rgba(230, 126, 34, 0.4);
+}
+/* Custom Scrollbar untuk bagian Riwayat Pendidikan dll */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 84, 0, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(211, 84, 0, 0.9);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: rgba(230, 126, 34, 0.5);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 126, 34, 0.9);
+}
+/* Animasi kursor berkedip */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2rem;
+  background-color: currentColor;
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+/* =========================================
+   BOOT UP / LOADING SCREEN STYLE
+========================================= */
+.boot-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #D35400;
+  font-family: 'Space Grotesk', monospace;
+  z-index: 9999;
+}
+
+.terminal-loader {
+  width: 80%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.system-text {
+  font-size: 14px;
+  margin: 12px 0;
+  letter-spacing: 2px;
+  opacity: 0; /* Mulai dari tidak terlihat */
+  animation: fadeInStep 0.1s forwards;
+}
+
+/* Delay kemunculan teks ala komputer jadul/terminal */
+.delay-1 { animation-delay: 0.6s; }
+.delay-2 { animation-delay: 1.2s; }
+.delay-3 { 
+  animation-delay: 1.8s; 
+  color: #4ade80; /* Warna hijau untuk Access Granted */
+} 
+
+.loading-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(211, 84, 0, 0.1);
+  margin-top: 30px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar {
+  height: 100%;
+  width: 0%;
+  background: #D35400;
+  box-shadow: 0 0 15px #D35400;
+  animation: loadBar 2.2s ease-in-out forwards;
+}
+
+@keyframes fadeInStep {
+  to { opacity: 1; }
+}
+
+@keyframes loadBar {
+  0% { width: 0%; }
+  40% { width: 45%; }
+  70% { width: 70%; }
+  100% { width: 100%; }
+}
+
+.glitch-logo:hover h2 {
+  animation: glitch-anim 0.3s linear infinite;
+  color: #fff;
+  text-shadow: 2px 0 #D35400, -2px 0 #0ff; /* Efek chromatic aberration (merah/biru) */
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
