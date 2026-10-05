@@ -8,7 +8,9 @@
   transition: background 0.8s ease, color 0.8s ease, border-color 0.8s ease;
 }
 
-/* TEMA FUTURISTIK ELEGAN */
+/* =========================================
+   TEMA FUTURISTIK ELEGAN
+========================================= */
 .light-mode {
   background: radial-gradient(circle at 50% 120%, rgba(211, 84, 0, 0.15) 0%, #F8F9FA 60%);
   color: #111;
@@ -21,7 +23,7 @@
 
 .app-container {
   min-height: 100vh;
-  width: 100%; /* Tambahkan baris ini */
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -46,7 +48,9 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
-/* Navbar */
+/* =========================================
+   NAVBAR & TOMBOL
+========================================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -55,6 +59,7 @@
   z-index: 10;
   position: relative;
   border-bottom: 1px solid rgba(211, 84, 0, 0.1);
+  width: 100%;
 }
 
 .dark-mode .navbar {
@@ -86,7 +91,7 @@
   transition: all 0.3s ease;
 }
 
-/* Efek garis bawah cyber */
+/* Efek garis bawah cyber di menu navbar */
 .nav-links span::after {
   content: '';
   position: absolute;
@@ -102,7 +107,7 @@
 }
 
 .nav-links span:hover {
-  letter-spacing: 4px; /* Huruf sedikit meregang */
+  letter-spacing: 4px; 
   color: #D35400;
 }
 
@@ -115,16 +120,17 @@
   height: 2px;
   border-radius: 0;
   opacity: 1;
-  box-shadow: 0 0 10px #D35400; /* Glow effect */
+  box-shadow: 0 0 10px #D35400; 
 }
 
-/* Actions */
+/* KELOMPOK TOMBOL (Actions) */
 .nav-actions {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
+/* TOMBOL THEME (Matahari / Bulan) */
 .theme-toggle {
   background: none;
   border: none;
@@ -133,15 +139,19 @@
   transition: transform 0.5s ease;
   color: inherit;
   opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .theme-toggle:hover {
   transform: rotate(180deg);
   opacity: 1;
 }
 
+/* TOMBOL HIRE ME */
 .hire-btn {
   padding: 10px 30px;
-  border-radius: 4px; /* Sudut tajam futuristik */
+  border-radius: 4px; 
   border: 1px solid #D35400;
   background: transparent;
   color: #D35400;
@@ -153,6 +163,7 @@
   font-size: 11px;
   transition: all 0.3s ease;
   position: relative;
+  display: block;
 }
 
 .hire-btn:hover {
@@ -172,7 +183,9 @@
   box-shadow: 0 0 20px rgba(230, 126, 34, 0.4);
 }
 
-/* Hero Section */
+/* =========================================
+   HERO SECTION & BACKGROUND TEXT
+========================================= */
 .hero-section {
   position: relative;
   flex: 1;
@@ -180,9 +193,9 @@
   justify-content: center;
   align-items: flex-end;
   perspective: 1500px; 
+  width: 100%;
 }
 
-/* Teks Raksasa Belakang (Hollow / Kawat) */
 .bg-text {
   position: absolute;
   top: 45%;
@@ -205,7 +218,6 @@
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
 }
 
-/* Lingkaran Cahaya di belakang foto */
 .glow-orb {
   position: absolute;
   top: 50%;
@@ -219,7 +231,6 @@
   pointer-events: none;
 }
 
-/* Foto Profil */
 .profile-img {
   position: relative;
   z-index: 2;
@@ -228,11 +239,13 @@
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)) contrast(1.1); 
 }
 
-/* Card Morph (HUD Panel Futuristik) */
+/* =========================================
+   CONTENT CARD (About, Contact)
+========================================= */
 .content-card {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.05); /* Hampir transparan */
+  background: rgba(255, 255, 255, 0.05); 
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(211, 84, 0, 0.3);
@@ -240,7 +253,7 @@
   padding: 50px;
   max-width: 600px;
   margin: 0 auto 100px auto;
-  text-align: left; /* Rata kiri lebih futuristik */
+  text-align: left; 
   box-shadow: 
     0 30px 60px rgba(0,0,0,0.2),
     inset 0 0 20px rgba(211, 84, 0, 0.05); 
@@ -257,7 +270,6 @@
   color: #e0e0e0;
 }
 
-/* Sudut siku-siku cyber di card */
 .content-card::before {
   content: '';
   position: absolute;
@@ -290,6 +302,7 @@
   color: #E67E22;
 }
 
+/* Tombol di dalam Card (Kembali) */
 .close-btn {
   margin-top: 40px;
   padding: 10px 30px;
@@ -320,6 +333,9 @@
   color: #000;
 }
 
+/* =========================================
+   LINK & SCROLLBAR
+========================================= */
 .sosmed-link {
   display: flex;
   align-items: center;
@@ -343,7 +359,7 @@
 
 .sosmed-link:hover {
   border-color: #D35400;
-  transform: translateX(10px); /* Bergerak ke kanan ala menu game sci-fi */
+  transform: translateX(10px); 
   box-shadow: inset 5px 0 0 #D35400;
 }
 .dark-mode .sosmed-link:hover {
@@ -351,7 +367,6 @@
   box-shadow: inset 5px 0 0 #E67E22;
 }
 
-/* Efek Hover untuk Link Riwayat Pendidikan */
 .school-link {
   transition: all 0.3s ease;
 }
@@ -366,7 +381,7 @@
   color: #E67E22 !important;
   text-shadow: 0 0 10px rgba(230, 126, 34, 0.4);
 }
-/* Custom Scrollbar untuk bagian Riwayat Pendidikan dll */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -391,7 +406,10 @@
 .dark-mode ::-webkit-scrollbar-thumb:hover {
   background: rgba(230, 126, 34, 0.9);
 }
-/* Animasi kursor berkedip */
+
+/* =========================================
+   ANIMASI TAMBAHAN (Kursor, Glitch, Music Btn)
+========================================= */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -406,6 +424,36 @@
   animation: blink 1s step-end infinite;
   vertical-align: middle;
 }
+
+.glitch-logo:hover h2 {
+  animation: glitch-anim 0.3s linear infinite;
+  color: #fff;
+  text-shadow: 2px 0 #D35400, -2px 0 #0ff; 
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+.music-btn:hover {
+  transform: scale(1.15) rotate(10deg);
+  background: #D35400 !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(211, 84, 0, 0.5);
+}
+
+.dark-mode .music-btn:hover {
+  background: #E67E22 !important;
+  border-color: #E67E22 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(230, 126, 34, 0.5);
+}
+
 /* =========================================
    BOOT UP / LOADING SCREEN STYLE
 ========================================= */
@@ -432,7 +480,7 @@
   font-size: 14px;
   margin: 12px 0;
   letter-spacing: 2px;
-  opacity: 0; /* Mulai dari tidak terlihat */
+  opacity: 0; 
   animation: fadeInStep 0.1s forwards;
 }
 
@@ -471,19 +519,4 @@
   40% { width: 45%; }
   70% { width: 70%; }
   100% { width: 100%; }
-}
-
-.glitch-logo:hover h2 {
-  animation: glitch-anim 0.3s linear infinite;
-  color: #fff;
-  text-shadow: 2px 0 #D35400, -2px 0 #0ff; /* Efek chromatic aberration (merah/biru) */
-}
-
-@keyframes glitch-anim {
-  0% { transform: translate(0) }
-  20% { transform: translate(-2px, 2px) }
-  40% { transform: translate(-2px, -2px) }
-  60% { transform: translate(2px, 2px) }
-  80% { transform: translate(2px, -2px) }
-  100% { transform: translate(0) }
 }

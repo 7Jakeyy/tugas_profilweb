@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import Navbar from './components/navbar';
-import Hero from './components/hero';
-import bgMusic from './assets/ocean and engines.mp3'; 
+import './App.css'; // Ini cara React memanggil CSS
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import bgMusic from './assets/lagu.mp3'; // Pastikan nama file lagunya benar
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
   const [isPlaying, setIsPlaying] = useState(false);
   
-  // State baru untuk Loading Screen
   const [isLoading, setIsLoading] = useState(true);
   
   const audioRef = useRef(null);
@@ -35,15 +34,15 @@ function App() {
     }
   };
 
-  // Efek Loading Screen selama 2.5 detik
+  // Timer untuk Boot Screen (Loading)
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500); // 2500 milidetik = 2.5 detik
+    }, 2500); 
     return () => clearTimeout(timer);
   }, []);
 
-  // Efek Autoplay Musik
+  // Autoplay musik saat ada interaksi pertama
   useEffect(() => {
     const handleFirstInteraction = () => {
       if (audioRef.current && !isPlayingRef.current) {
@@ -60,7 +59,7 @@ function App() {
     return () => window.removeEventListener('click', handleFirstInteraction);
   }, []);
 
-  // JIKA MASIH LOADING, TAMPILKAN LAYAR INI DULU
+  // Tampilan Loading
   if (isLoading) {
     return (
       <div className="boot-screen">
@@ -77,7 +76,7 @@ function App() {
     );
   }
 
-  // JIKA LOADING SELESAI, TAMPILKAN WEB UTAMA
+  // Tampilan Web Utama
   return (
     <div className={`app-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="grid-bg"></div>
